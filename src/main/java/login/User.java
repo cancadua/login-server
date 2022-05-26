@@ -3,9 +3,11 @@ package login;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class WebUser {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue
     private Integer id;
@@ -13,13 +15,13 @@ public class WebUser {
     private String password;
     private String email;
 
-    public WebUser(String username, String password, String email) {
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public WebUser() {
+    public User() {
     }
 
     public String getUsername() {
@@ -59,4 +61,6 @@ public class WebUser {
                 ", email='" + email + '\'' +
                 '}';
     }
+
 }
+
